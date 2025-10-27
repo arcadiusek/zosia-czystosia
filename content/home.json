@@ -1,0 +1,25 @@
+{
+  "heroTitle": "Profesjonalne sprzątanie z pasją i sercem",
+  "heroDescription": "Jestem Zosia i zapewnię Twojemu domowi lub biurowi błyszczącą czystość.",
+  "aboutHeading": "Cześć, jestem Zosia! 👋",
+  "aboutText": "Od ponad 5 lat zajmuję się profesjonalnym sprzątaniem...",
+  "phone": "+48 790 30 70 20",
+  "email": "kontakt@zosiaczystosia.pl",
+  "area": "Warszawa i okolice (do 30 km)"
+}
+```
+
+4. Kliknij **"Commit changes"**
+
+---
+
+### **KROK 2: Sprawdź strukturę**
+
+Teraz powinieneś mieć:
+```
+📁 admin/
+   📄 config.yml ✅
+   📄 index.html ✅
+📁 content/
+   📄 home.json ✅
+📄 index.html ✅
