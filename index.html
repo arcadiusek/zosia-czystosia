@@ -1,0 +1,1780 @@
+        /* CMS Editable styles */
+        [contenteditable="true"] {
+            outline: none;
+            position: relative;
+        }
+
+        [contenteditable="true"]:hover {
+            outline: 2px dashed var(--accent-color);
+            outline-offset: 4px;
+        }
+
+        [<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zosia Czystosia - Profesjonalny serwis sprzątający. Sprzątanie mieszkań, domów i biur z pasją i dbałością o detale.">
+    <meta name="keywords" content="sprzątanie, serwis sprzątający, sprzątanie mieszkań, sprzątanie biur, Warszawa">
+    <title>Zosia Czystosia - Profesjonalny Serwis Sprzątający</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #06D6A0;
+            --accent-color: #F72585;
+            --dark-color: #1A1D2E;
+            --light-bg: #F8FAFB;
+            --white: #FFFFFF;
+            --gray: #6B7280;
+            --light-gray: #E5E7EB;
+            --gradient: linear-gradient(135deg, #06D6A0 0%, #4ECDC4 100%);
+            --accent-gradient: linear-gradient(135deg, #F72585 0%, #FF6B9D 100%);
+            --dark-gradient: linear-gradient(135deg, #1A1D2E 0%, #2B2D42 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 8px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo svg {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section - Completely Redesigned */
+        .hero {
+            position: relative;
+            padding: 180px 20px 120px;
+            background: var(--white);
+            color: var(--dark-color);
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(6, 214, 160, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(247, 37, 133, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100"><path d="M0,50 Q300,100 600,50 T1200,50 L1200,100 L0,100 Z" fill="%23F8FAFB"/></svg>') no-repeat bottom;
+            background-size: cover;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            margin-bottom: 60px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(247, 37, 133, 0.08);
+            border: 1px solid rgba(247, 37, 133, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+            color: var(--dark-color);
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: var(--gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(6, 214, 160, 0.35);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(6, 214, 160, 0.45);
+        }
+
+        .btn-secondary-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            color: var(--dark-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-hero:hover {
+            background: var(--light-bg);
+            border-color: var(--primary-color);
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            height: 500px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.2), rgba(78, 205, 196, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            width: 90%;
+        }
+
+        .stat-card {
+            flex: 1;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 20px;
+        }
+
+        section:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(6, 214, 160, 0.1);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 19px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* About Section - Enhanced */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-decoration {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: var(--accent-gradient);
+            border-radius: 30px;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .value-item {
+            padding: 25px;
+            background: var(--white);
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid var(--light-gray);
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(6, 214, 160, 0.15);
+        }
+
+        .value-item .icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .value-item strong {
+            display: block;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Services Section - Enhanced */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.1), rgba(78, 205, 196, 0.1));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 25px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Pricing Section - Premium Look */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 3px solid var(--light-gray);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(6, 214, 160, 0.25);
+        }
+
+        .pricing-card.featured::before {
+            content: 'NAJLEPSZY WYBÓR';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
+        .price {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 25px 0;
+            letter-spacing: -2px;
+        }
+
+        .price span {
+            font-size: 18px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 35px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+            width: 24px;
+            height: 24px;
+            background: rgba(6, 214, 160, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            width: 100%;
+            padding: 16px 35px;
+            background: var(--gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(6, 214, 160, 0.3);
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 25px rgba(6, 214, 160, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            height: 450px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(26, 29, 46, 0.95), transparent);
+            padding: 30px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .gallery-overlay p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border: 2px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 100px;
+            color: var(--primary-color);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark-color);
+            font-size: 16px;
+        }
+
+        .stars {
+            color: #FFA500;
+            font-size: 18px;
+            margin-top: 12px;
+        }
+
+        /* FAQ Section - UŻYCIE NATYWNEGO <details> */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+            border: 2px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .faq-item[open] {
+            border-color: var(--primary-color);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 25px 30px;
+            background: var(--white);
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--dark-color);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 28px;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+
+        .faq-item[open] .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-question:hover {
+            background: var(--light-bg);
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item .icon {
+            font-size: 32px;
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.1), rgba(78, 205, 196, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .contact-item p {
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: var(--light-bg);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(6, 214, 160, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gradient);
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-section p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            color: white;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* CMS Panel */
+        .cms-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: var(--accent-gradient);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(247, 37, 133, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .cms-toggle:hover {
+            transform: scale(1.1) rotate(90deg);
+        }
+
+        .cms-panel {
+            position: fixed;
+            top: 0;
+            right: -500px;
+            width: 450px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.2);
+            transition: right 0.3s ease;
+            z-index: 1002;
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        .cms-panel.active {
+            right: 0;
+        }
+
+        .cms-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .cms-header h2 {
+            font-size: 24px;
+            color: var(--dark-color);
+        }
+
+        .cms-close {
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: var(--dark-color);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .cms-close:hover {
+            background: var(--light-bg);
+        }
+
+        .cms-section {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .cms-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .cms-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cms-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .cms-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .cms-save {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cms-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(6, 214, 160, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                padding: 40px;
+                gap: 20px;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 140px 20px 80px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .hero-image-main {
+                height: 350px;
+            }
+
+            .hero-stats {
+                position: static;
+                transform: none;
+                margin-top: 30px;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .services-grid,
+            .pricing-grid,
+            .testimonials-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cms-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#06D6A0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#F72585;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6B9D;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Background circle -->
+                    <circle cx="50" cy="50" r="48" fill="url(#logoGradient)"/>
+                    
+                    <!-- House shape -->
+                    <path d="M 50 25 L 75 45 L 75 75 L 25 75 L 25 45 Z" fill="white" opacity="0.95"/>
+                    
+                    <!-- Roof -->
+                    <path d="M 50 25 L 75 45 L 70 45 L 50 30 L 30 45 L 25 45 Z" fill="white" opacity="1"/>
+                    
+                    <!-- Door -->
+                    <rect x="42" y="55" width="16" height="20" rx="1" fill="url(#logoGradient)" opacity="0.6"/>
+                    
+                    <!-- Window left -->
+                    <rect x="32" y="50" width="8" height="8" rx="1" fill="url(#logoGradient)" opacity="0.5"/>
+                    <line x1="36" y1="50" x2="36" y2="58" stroke="white" stroke-width="1"/>
+                    <line x1="32" y1="54" x2="40" y2="54" stroke="white" stroke-width="1"/>
+                    
+                    <!-- Window right -->
+                    <rect x="60" y="50" width="8" height="8" rx="1" fill="url(#logoGradient)" opacity="0.5"/>
+                    <line x1="64" y1="50" x2="64" y2="58" stroke="white" stroke-width="1"/>
+                    <line x1="60" y1="54" x2="68" y2="54" stroke="white" stroke-width="1"/>
+                    
+                    <!-- Heart with sparkle -->
+                    <path d="M 50 68 C 50 68 45 64 45 61 C 45 58 47 57 49 57 C 50 57 50 58 50 58 C 50 58 50 57 51 57 C 53 57 55 58 55 61 C 55 64 50 68 50 68 Z" 
+                          fill="url(#heartGradient)" opacity="0.9"/>
+                    
+                    <!-- Sparkles around the house -->
+                    <circle cx="22" cy="35" r="2" fill="white" opacity="0.9"/>
+                    <circle cx="78" cy="35" r="2" fill="white" opacity="0.9"/>
+                    <circle cx="28" cy="65" r="2.5" fill="url(#heartGradient)" opacity="0.8"/>
+                    <circle cx="72" cy="65" r="2.5" fill="url(#heartGradient)" opacity="0.8"/>
+                    
+                    <!-- Star sparkles -->
+                    <path d="M50 18 L51 21 L54 22 L51 23 L50 26 L49 23 L46 22 L49 21 Z" 
+                          fill="white" opacity="0.95"/>
+                    <path d="M80 55 L81 57 L83 58 L81 59 L80 61 L79 59 L77 58 L79 57 Z" 
+                          fill="white" opacity="0.9"/>
+                    <path d="M20 55 L21 57 L23 58 L21 59 L20 61 L19 59 L17 58 L19 57 Z" 
+                          fill="white" opacity="0.9"/>
+                </svg>
+                <span class="logo-text">Zosia Czystosia</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Start</a></li>
+                <li><a href="#about">O mnie</a></li>
+                <li><a href="#services">Usługi</a></li>
+                <li><a href="#pricing">Cennik</a></li>
+                <li><a href="#process">Jak działam</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#testimonials">Opinie</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    ⭐ Ponad 100 zadowolonych klientów
+                </div>
+                <h1 data-editable="hero-title">
+                    <span style="color: var(--dark-color);">Profesjonalne sprzątanie z pasją i sercem</span>
+                </h1>
+                <p data-editable="hero-description">
+                    Jestem Zosia i zapewnię Twojemu domowi lub biurowi błyszczącą czystość. Z dbałością o każdy detal i szacunkiem dla Twojej przestrzeni.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button">
+                        <i class="fas fa-phone"></i> Umów bezpłatną wycenę
+                    </a>
+                    <a href="#services" class="btn-secondary-hero">
+                        <i class="fas fa-sparkles"></i> Zobacz usługi
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=600&h=500&fit=crop&q=80" alt="Profesjonalna pani sprzątająca" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=500&fit=crop';">
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Zadowolonych klientów</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5★</div>
+                        <div class="stat-label">Średnia ocen</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Lat doświadczenia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💚 O mnie</span>
+                <h2 class="section-title" data-editable="about-title">Poznaj osobę, która zadba o Twoją przestrzeń</h2>
+                <p class="section-subtitle">Profesjonalizm, pasja i dbałość o każdy detal</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image-wrapper">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=500&h=500&fit=crop&q=80" alt="Zosia - profesjonalna sprzątaczka" onerror="this.src='https://images.unsplash.com/photo-1560264280-88b68371db39?w=500&h=500&fit=crop';">
+                    </div>
+                    <div class="about-decoration"></div>
+                </div>
+                <div class="about-text">
+                    <h3 data-editable="about-heading">Cześć, jestem Zosia! 👋</h3>
+                    <p data-editable="about-p1">Od ponad 5 lat zajmuję się profesjonalnym sprzątaniem, a każde zlecenie traktuję jak własny dom. Wierzę, że czyste otoczenie to fundament dobrego samopoczucia i spokoju ducha.</p>
+                    <p data-editable="about-p2">Moją misją jest nie tylko odkurzanie i mycie – to tworzenie przestrzeni, w której możesz odpocząć, pracować i żyć bez zmartwień. Działam z pełnym profesjonalizmem, dyskrecją i szacunkiem dla każdego klienta.</p>
+                    <p data-editable="about-p3">Jestem osobą otwartą, przyjazną i autentyczną. Wierzę w równość, inkluzywność i w to, że każdy zasługuje na czystą przestrzeń bez względu na to, kim jest.</p>
+                    
+                    <div class="values">
+                        <div class="value-item">
+                            <div class="icon">🎯</div>
+                            <strong>Profesjonalizm</strong>
+                        </div>
+                        <div class="value-item">
+                            <div class="icon">💚</div>
+                            <strong>Ekologiczne środki</strong>
+                        </div>
+                        <div class="value-item">
+                            <div class="icon">🤝</div>
+                            <strong>Zaufanie</strong>
+                        </div>
+                        <div class="value-item">
+                            <div class="icon">⭐</div>
+                            <strong>Dbałość o detal</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">✨ Usługi</span>
+                <h2 class="section-title" data-editable="services-title">Szeroki zakres usług dopasowanych do Twoich potrzeb</h2>
+                <p class="section-subtitle">Od podstawowego sprzątania po kompleksowe generalne czyszczenie</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3 data-editable="service1-title">Sprzątanie mieszkań</h3>
+                    <p data-editable="service1-desc">Kompleksowe sprzątanie Twojego mieszkania – od kuchni po łazienkę. Odkurzanie, mycie podłóg, czyszczenie powierzchni i wiele więcej.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3 data-editable="service2-title">Sprzątanie biur</h3>
+                    <p data-editable="service2-desc">Utrzymanie czystości w miejscu pracy. Regularne wizyty dostosowane do Twojego harmonogramu i potrzeb biura.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3 data-editable="service3-title">Mycie okien</h3>
+                    <p data-editable="service3-desc">Profesjonalne mycie okien z obu stron, w tym ramy i parapety. Twoje okna będą lśnić!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💰 Cennik</span>
+                <h2 class="section-title" data-editable="pricing-title">Przejrzyste ceny bez ukrytych kosztów</h2>
+                <p class="section-subtitle">Wybierz pakiet idealny dla siebie</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 data-editable="price1-title">Pakiet Podstawowy</h3>
+                    <div class="price" data-editable="price1-amount">80 zł<span>/godz</span></div>
+                    <ul class="pricing-features">
+                        <li data-editable="price1-feat1">Odkurzanie wszystkich pomieszczeń</li>
+                        <li data-editable="price1-feat2">Mycie podłóg</li>
+                        <li data-editable="price1-feat3">Wycieranie kurzu</li>
+                        <li data-editable="price1-feat4">Mycie łazienki</li>
+                        <li data-editable="price1-feat5">Podstawowe sprzątanie kuchni</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary">Wybierz pakiet</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3 data-editable="price2-title">Pakiet Premium</h3>
+                    <div class="price" data-editable="price2-amount">120 zł<span>/godz</span></div>
+                    <ul class="pricing-features">
+                        <li data-editable="price2-feat1">Wszystko z pakietu podstawowego</li>
+                        <li data-editable="price2-feat2">Mycie okien (do 4 okien)</li>
+                        <li data-editable="price2-feat3">Czyszczenie lodówki</li>
+                        <li data-editable="price2-feat4">Mycie piekarnika</li>
+                        <li data-editable="price2-feat5">Czyszczenie powierzchni trudnodostępnych</li>
+                        <li data-editable="price2-feat6">Ekologiczne środki czystości</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary">Wybierz pakiet</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 data-editable="price3-title">Sprzątanie generalne</h3>
+                    <div class="price" data-editable="price3-amount">Od 400 zł<span></span></div>
+                    <ul class="pricing-features">
+                        <li data-editable="price3-feat1">Kompleksowe czyszczenie</li>
+                        <li data-editable="price3-feat2">Wszystkie okna i parapety</li>
+                        <li data-editable="price3-feat3">Mycie wszystkich powierzchni</li>
+                        <li data-editable="price3-feat4">Czyszczenie AGD</li>
+                        <li data-editable="price3-feat5">Pranie zasłon (opcja)</li>
+                        <li data-editable="price3-feat6">Indywidualna wycena</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary">Zapytaj o cenę</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 50px; color: var(--gray); font-size: 17px;">
+                <strong style="color: var(--primary-color);">🎁 Promocja:</strong> 10% zniżki przy regularnych wizytach (min. 2x w miesiącu) | Darmowa wycena dla wszystkich nowych klientów
+            </p>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔄 Proces</span>
+                <h2 class="section-title" data-editable="process-title">Jak wygląda współpraca?</h2>
+                <p class="section-subtitle">Prosty i przejrzysty proces w 4 krokach</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 data-editable="step1-title">Kontakt</h3>
+                    <p data-editable="step1-desc">Skontaktuj się ze mną telefonicznie, przez email lub formularz. Opowiedz o swoich potrzebach.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 data-editable="step2-title">Bezpłatna wycena</h3>
+                    <p data-editable="step2-desc">Ustalamy szczegóły, zakres prac i datę. Przedstawiam przejrzystą wycenę bez ukrytych kosztów.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 data-editable="step3-title">Profesjonalne sprzątanie</h3>
+                    <p data-editable="step3-desc">Przychodzę w umówionym terminie z własnymi środkami i sprzętem. Dbam o każdy detal.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 data-editable="step4-title">Ciesz się czystością</h3>
+                    <p data-editable="step4-desc">Odbiór prac i płatność. Twoja przestrzeń lśni, a Ty możesz w pełni cieszyć się czystością!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📸 Galeria</span>
+                <h2 class="section-title">Zobacz efekty mojej pracy</h2>
+                <p class="section-subtitle">Profesjonalne rezultaty, które mówią same za siebie</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=600&h=450&fit=crop" alt="Czysta kuchnia" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22450%22%3E%3Crect fill=%22%234ECDC4%22 width=%22600%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22%3E🏠%3C/text%3E%3C/svg%3E';">
+                    <div class="gallery-overlay">
+                        <h4>Błyszcząca kuchnia</h4>
+                        <p>Każda powierzchnia idealnie wyczyszczona</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop" alt="Czysta łazienka" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22450%22%3E%3Crect fill=%22%2306D6A0%22 width=%22600%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22%3E🚿%3C/text%3E%3C/svg%3E';">
+                    <div class="gallery-overlay">
+                        <h4>Lśniąca łazienka</h4>
+                        <p>Perfekcyjna czystość i świeżość</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&h=450&fit=crop" alt="Czyste biuro" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22450%22%3E%3Crect fill=%22%23F72585%22 width=%22600%22 height=%22450%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22%3E💼%3C/text%3E%3C/svg%3E';">
+                    <div class="gallery-overlay">
+                        <h4>Profesjonalne biuro</h4>
+                        <p>Idealne środowisko do pracy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">⭐ Opinie</span>
+                <h2 class="section-title" data-editable="testimonials-title">Co mówią moi klienci?</h2>
+                <p class="section-subtitle">Zaufało mi ponad 100 zadowolonych klientów</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-editable="testimonial1-text">Zosia to prawdziwy profesjonalista! Mieszkanie po jej wizycie wygląda jak nowe. Bardzo dokładna, punktualna i sympatyczna. Polecam z całego serca!</p>
+                    <p class="testimonial-author" data-editable="testimonial1-author">— Anna K., Warszawa</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-editable="testimonial2-text">Współpraca z Zosią to sama przyjemność. Zawsze można na nią liczyć, a efekty jej pracy przerastają oczekiwania. Wreszcie mam czas dla siebie!</p>
+                    <p class="testimonial-author" data-editable="testimonial2-author">— Michał P., Warszawa</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-editable="testimonial3-text">Najlepsza decyzja jaką podjęłam to zatrudnienie Zosi do regularnego sprzątania biura. Nasi pracownicy są zachwyceni, a atmosfera w pracy się poprawiła. Gorąco polecam!</p>
+                    <p class="testimonial-author" data-editable="testimonial3-author">— Firma IT Solutions</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-editable="testimonial4-text">Po remoncie mieszkanie wyglądało koszmamie. Zosia w kilka godzin zrobiła cuda - wszystko lśni i pachnie świeżością. Bardzo pomocna i miła osoba.</p>
+                    <p class="testimonial-author" data-editable="testimonial4-author">— Karolina W., Piaseczno</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-editable="testimonial5-text">Zosia jest nie tylko świetna w tym co robi, ale też bardzo dyskretna i godna zaufania. Czuję się komfortowo zostawiając jej klucze do mieszkania. Prawdziwy skarb!</p>
+                    <p class="testimonial-author" data-editable="testimonial5-author">— Robert M., Konstancin-Jeziorna</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" data-editable="testimonial6-text">Korzystam z usług Zosi już od roku. Zawsze perfekcyjnie czysto, a jej podejście do klienta jest wzorowe. To więcej niż sprzątanie - to prawdziwa troska o przestrzeń.</p>
+                    <p class="testimonial-author" data-editable="testimonial6-author">— Ewa S., Warszawa</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">❓ FAQ</span>
+                <h2 class="section-title" data-editable="faq-title">Często zadawane pytania</h2>
+                <p class="section-subtitle">Odpowiedzi na najczęstsze pytania</p>
+            </div>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Czy muszę być obecny podczas sprzątania?
+                    </summary>
+                    <div class="faq-answer active">
+                        <p>Nie, nie musisz być obecny. Wiele moich klientów zostawia mi klucze i zajmuję się sprzątaniem podczas ich nieobecności. Gwarantuję pełną dyskrecję i bezpieczeństwo.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Jakich środków czystości używasz?
+                    </summary>
+                    <div class="faq-answer active">
+                        <p>Używam profesjonalnych, ekologicznych środków czystości, które są bezpieczne dla ludzi, zwierząt i środowiska. Jeśli masz preferencje dotyczące konkretnych produktów, chętnie je zastosuję.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Czy sprzątanie obejmuje przyniesienie własnych narzędzi?
+                    </summary>
+                    <div class="faq-answer active">
+                        <p>Tak, przychodzę z pełnym zestawem profesjonalnych narzędzi i środków czystości. Nie musisz się o nic martwić!</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Jaki obszar obsługujesz?
+                    </summary>
+                    <div class="faq-answer active">
+                        <p>Głównie działam na terenie Warszawy i okolic (do 30 km). Jeśli jesteś dalej, skontaktuj się ze mną - być może uda nam się coś ustalić.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Jak długo trwa sprzątanie?
+                    </summary>
+                    <div class="faq-answer active">
+                        <p>To zależy od wielkości i stanu mieszkania. Standardowe mieszkanie 50-60m² zajmuje około 3-4 godzin. Podczas wyceny zawsze określam szacowany czas realizacji.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Jak mogę zapłacić za usługę?
+                    </summary>
+                    <div class="faq-answer active">
+                        <p>Akceptuję płatności gotówką po wykonaniu usługi lub przelewem bankowym. Przy regularnej współpracy możemy ustalić dogodny system rozliczeń.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Co jeśli nie będę zadowolony z usługi?
+                    </summary>
+                    <div class="faq-answer active">
+                        <p>Twoja satysfakcja jest dla mnie najważniejsza. Jeśli coś nie będzie zgodne z Twoimi oczekiwaniami, poprawię to od razu lub w najbliższym możliwym terminie - bezpłatnie.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📞 Kontakt</span>
+                <h2 class="section-title" data-editable="contact-title">Skontaktuj się ze mną</h2>
+                <p class="section-subtitle">Umów bezpłatną wycenę już dziś!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h3>Telefon</h3>
+                            <p data-editable="contact-phone">+48 790 30 70 20</p>
+                            <p style="font-size: 14px; color: var(--gray); margin-top: 5px;">Pn-Pt: 8:00-18:00, Sb: 9:00-14:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h3>Email</h3>
+                            <p data-editable="contact-email">kontakt@zosiaczystosia.pl</p>
+                            <p style="font-size: 14px; color: var(--gray); margin-top: 5px;">Odpowiadam w ciągu 24h</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h3>Obszar działania</h3>
+                            <p data-editable="contact-area">Warszawa i okolice (do 30 km)</p>
+                            <p style="font-size: 14px; color: var(--gray); margin-top: 5px;">Zapytaj o dostępność w Twojej okolicy</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><i class="fas fa-comments"></i></div>
+                        <div>
+                            <h3>Media społecznościowe</h3>
+                            <div class="social-links">
+                                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 25px; font-size: 24px; color: var(--dark-color);">Wyślij wiadomość</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Imię i nazwisko</label>
+                            <input type="text" id="name" name="name" required placeholder="Jan Kowalski">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="jan@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Wiadomość</label>
+                            <textarea id="message" name="message" required placeholder="Opisz swoje potrzeby - typ usługi, wielkość mieszkania, preferowany termin..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-secondary" style="width: 100%;"><i class="fas fa-paper-plane"></i> Wyślij wiadomość</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
