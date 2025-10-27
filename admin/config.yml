@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: arcadiusek/zosia-czystosia
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Strony"
+    files:
+      - label: "Strona Główna"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - {label: "Tytuł Hero", name: "heroTitle", widget: "string"}
+          - {label: "Opis Hero", name: "heroDescription", widget: "text"}
+          - {label: "O mnie - Nagłówek", name: "aboutHeading", widget: "string"}
+          - {label: "O mnie - Tekst", name: "aboutText", widget: "text"}
+          - {label: "Telefon", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Obszar działania", name: "area", widget: "string"}
